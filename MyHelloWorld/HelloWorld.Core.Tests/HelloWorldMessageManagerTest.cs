@@ -44,5 +44,19 @@ namespace HelloWorld.Core.Tests
       // Assert.
       manager.GetMessage(null);
     }
+
+    [TestMethod]
+    public void Test_GetMessage_LongName()
+    {
+      // Arrange.
+      var manager = new HelloWorldMessageManager();
+
+      // Act.
+      var longName = "longlonglonglonglonglonglonglonglonglonglonglongName";
+      var result   = manager.GetMessage(longName);
+
+      // Assert.
+      Assert.AreEqual<string>(string.Format("Hello World {0}!", longName), result);
+    }
   }
 }
