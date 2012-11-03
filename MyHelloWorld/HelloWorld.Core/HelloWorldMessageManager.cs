@@ -19,7 +19,7 @@ namespace HelloWorld.Core
         return string.Empty;
       }
 
-      return string.Format("Hello World {0}!", value); 
+      return string.Format("Hello Tekk World {0}!", value); 
     }
   }
 }
