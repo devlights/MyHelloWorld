@@ -17,8 +17,7 @@ namespace HelloWorld.Core.Tests
       var result  = manager.GetMessage("test");
 
       // Assert.
-      var expected = "Hello World test!";
-      Assert.AreEqual<string>(expected, result);
+      Assert.AreEqual<string>("Hello World test!", result);
     }
 
     [TestMethod]
