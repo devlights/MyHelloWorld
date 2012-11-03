@@ -12,9 +12,9 @@ namespace HelloWorld.StdOut
   {
     static void Main(string[] args)
     {
-      const string name = "devlights";
+      const string NAME = "devlights";
 
-      var manager = new HelloWorldMessageManager(name);
+      var manager = new HelloWorldMessageManager(NAME);
       Console.WriteLine(manager.GetMessage());
     }
   }
