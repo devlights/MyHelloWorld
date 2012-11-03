@@ -18,6 +18,11 @@ namespace HelloWorld.Core
 
     public string GetMessage()
     {
+      if (string.IsNullOrEmpty(_name))
+      {
+        return string.Empty;
+      }
+
       return string.Format("Hello World {0}!", _name); 
     }
   }
