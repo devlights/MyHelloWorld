@@ -5,7 +5,7 @@ namespace HelloWorld.Win
   using System.ComponentModel;
   using System.Linq;
 
-  public class MainFormModel : INotifyPropertyChanged
+  public class MainViewModel : INotifyPropertyChanged
   {
     public event PropertyChangedEventHandler PropertyChanged;
 

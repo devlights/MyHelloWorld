@@ -10,20 +10,20 @@ namespace HelloWorld.Win
   using HelloWorld.Core;
   using HelloWorld.Core.NinjectModules;
 
-  public class MainFormPresenter
+  public class MainViewPresenter
   {
     IMainView _view;
-    MainFormModel _model;
+    MainViewModel _model;
     IMessageManager _manager;
 
-    public MainFormPresenter(IMainView view)
+    public MainViewPresenter(IMainView view)
     {
       _view = view;
-      _model = new MainFormModel();
+      _model = new MainViewModel();
       _manager = new StandardKernel(new HelloWorldModule()).Get<IMessageManager>();
     }
 
-    public MainFormModel Model
+    public MainViewModel Model
     {
       get
       {

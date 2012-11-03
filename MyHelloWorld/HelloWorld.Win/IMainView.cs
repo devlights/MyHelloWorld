@@ -6,6 +6,6 @@ namespace HelloWorld.Win
 
   public interface IMainView
   {
-    void SetupView(MainFormPresenter presenter);
+    void SetupView(MainViewPresenter presenter);
   }
 }

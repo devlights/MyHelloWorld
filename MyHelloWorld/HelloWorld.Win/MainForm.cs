@@ -8,7 +8,7 @@ namespace HelloWorld.Win
 
   public partial class MainForm : Form, IMainView
   {
-    MainFormPresenter _presenter;
+    MainViewPresenter _presenter;
 
     public MainForm()
     {
@@ -16,15 +16,16 @@ namespace HelloWorld.Win
 
       if (!DesignMode)
       {
-        _presenter = new MainFormPresenter(this);
+        _presenter = new MainViewPresenter(this);
         _presenter.Setup();
       }
     }
 
-    public void SetupView(MainFormPresenter presenter)
+    public void SetupView(MainViewPresenter presenter)
     {
       var model = presenter.Model;
 
+      DataBindings.Add(new Binding("Text", model, "Title", false));
       txtName.DataBindings.Add(new Binding("Text", model, "Name", false));
       txtResult.DataBindings.Add(new Binding("Text", model, "Message", false));
 
