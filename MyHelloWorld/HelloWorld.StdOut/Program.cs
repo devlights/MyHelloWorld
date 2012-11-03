@@ -13,7 +13,7 @@ namespace HelloWorld.StdOut
   
   class Program
   {
-    static void Main(string[] args)
+    static void Main()
     {
       var kernel = new StandardKernel(new HelloWorldModule());
       var manager = kernel.Get<IMessageManager>();
