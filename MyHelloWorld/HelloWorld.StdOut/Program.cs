@@ -1,5 +1,4 @@
-﻿using Ninject.Parameters;
-
+﻿
 namespace HelloWorld.StdOut
 {
   using System;
@@ -7,6 +6,7 @@ namespace HelloWorld.StdOut
   using System.Linq;
 
   using Ninject;
+  using Ninject.Parameters;
 
   using HelloWorld.Core;
   using HelloWorld.Core.NinjectModules;
