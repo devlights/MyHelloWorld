@@ -7,21 +7,14 @@ namespace HelloWorld.Core
   
   public class HelloWorldMessageManager : IMessageManager
   {
-    private readonly string _name;
-
-    public HelloWorldMessageManager(string name)
+    public string GetMessage(string value)
     {
-      _name = name;
-    }
-
-    public string GetMessage()
-    {
-      if (string.IsNullOrEmpty(_name))
+      if (string.IsNullOrEmpty(value))
       {
         return string.Empty;
       }
 
-      return string.Format("Hello World {0}!", _name); 
+      return string.Format("Hello World {0}!", value); 
     }
   }
 }

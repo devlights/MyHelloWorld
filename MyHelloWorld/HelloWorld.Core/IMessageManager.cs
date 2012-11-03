@@ -7,6 +7,6 @@ namespace HelloWorld.Core
   
   public interface IMessageManager
   {
-    string GetMessage();
+    string GetMessage(string value);
   }
 }

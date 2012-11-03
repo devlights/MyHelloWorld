@@ -11,10 +11,10 @@ namespace HelloWorld.Core.Tests
     public void Test_GetMessage_Success()
     {
       // Arrange.
-      var manager = new HelloWorldMessageManager("test");
+      var manager = new HelloWorldMessageManager();
 
       // Act.
-      var result  = manager.GetMessage();
+      var result  = manager.GetMessage("test");
 
       // Assert.
       var expected = "Hello World test!";
@@ -25,11 +25,10 @@ namespace HelloWorld.Core.Tests
     public void Test_GetMessage_Empty()
     {
       // Arrange.
-      var name = string.Empty;
-      var manager = new HelloWorldMessageManager(name);
+      var manager = new HelloWorldMessageManager();
 
       // Act.
-      var result = manager.GetMessage();
+      var result = manager.GetMessage(string.Empty);
 
       // Assert.
       Assert.AreEqual<string>(string.Empty, result);

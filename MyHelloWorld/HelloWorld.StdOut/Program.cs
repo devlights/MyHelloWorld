@@ -9,17 +9,16 @@ namespace HelloWorld.StdOut
   using Ninject;
 
   using HelloWorld.Core;
+  using HelloWorld.Core.NinjectModules;
   
   class Program
   {
     static void Main(string[] args)
     {
-      const string THE_NAME = "devlights";
-
       var kernel = new StandardKernel(new HelloWorldModule());
-      var manager = kernel.Get<IMessageManager>(new ConstructorArgument("name", THE_NAME));
+      var manager = kernel.Get<IMessageManager>();
 
-      Console.WriteLine(manager.GetMessage());
+      Console.WriteLine(manager.GetMessage("devlights"));
     }
   }
 }
