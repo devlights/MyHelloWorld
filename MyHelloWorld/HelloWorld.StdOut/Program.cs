@@ -1,9 +1,12 @@
-﻿
+﻿using Ninject.Parameters;
+
 namespace HelloWorld.StdOut
 {
   using System;
   using System.Collections.Generic;
   using System.Linq;
+
+  using Ninject;
 
   using HelloWorld.Core;
   
@@ -13,7 +16,9 @@ namespace HelloWorld.StdOut
     {
       const string THE_NAME = "devlights";
 
-      var manager = new HelloWorldMessageManager(THE_NAME);
+      var kernel = new StandardKernel(new HelloWorldModule());
+      var manager = kernel.Get<IMessageManager>(new ConstructorArgument("name", THE_NAME));
+
       Console.WriteLine(manager.GetMessage());
     }
   }
