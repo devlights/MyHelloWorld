@@ -15,7 +15,7 @@ namespace HelloWorld.StdOut
   {
     static void Main()
     {
-      var kernel = new StandardKernel(new HelloWorldModule());
+      var kernel  = new StandardKernel(new HelloWorldModule());
       var manager = kernel.Get<IMessageManager>();
 
       Console.WriteLine(manager.GetMessage("devlights"));
