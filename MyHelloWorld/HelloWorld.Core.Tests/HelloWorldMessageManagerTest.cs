@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+﻿
 namespace HelloWorld.Core.Tests
 {
+  using System;
+  using Microsoft.VisualStudio.TestTools.UnitTesting;
+  
   [TestClass]
   public class HelloWorldMessageManagerTest
   {
