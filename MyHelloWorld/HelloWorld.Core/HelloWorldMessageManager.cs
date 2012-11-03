@@ -9,6 +9,11 @@ namespace HelloWorld.Core
   {
     public string GetMessage(string value)
     {
+      if (value == null)
+      {
+        throw new ArgumentNullException("value");
+      }
+
       if (string.IsNullOrEmpty(value))
       {
         return string.Empty;

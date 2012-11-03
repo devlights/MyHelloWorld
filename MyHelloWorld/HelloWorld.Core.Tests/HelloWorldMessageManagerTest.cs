@@ -33,5 +33,17 @@ namespace HelloWorld.Core.Tests
       // Assert.
       Assert.AreEqual<string>(string.Empty, result);
     }
+
+    [TestMethod]
+    [ExpectedException(typeof(ArgumentNullException))]
+    public void Test_GetMessage_Null()
+    {
+      // Arrange.
+      var manager = new HelloWorldMessageManager();
+
+      // Act.
+      // Assert.
+      manager.GetMessage(null);
+    }
   }
 }
