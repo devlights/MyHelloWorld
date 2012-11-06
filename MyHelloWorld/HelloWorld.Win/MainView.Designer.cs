@@ -1,6 +1,6 @@
 ﻿namespace HelloWorld.Win
 {
-  partial class MainForm
+  partial class MainView
   {
     /// <summary>
     /// Required designer variable.
@@ -48,6 +48,7 @@
       this.btnExec.TabIndex = 1;
       this.btnExec.Text = "PushMe";
       this.btnExec.UseVisualStyleBackColor = true;
+      this.btnExec.Click += new System.EventHandler(this.btnExec_Click);
       // 
       // txtResult
       // 
@@ -56,7 +57,7 @@
       this.txtResult.Size = new System.Drawing.Size(259, 19);
       this.txtResult.TabIndex = 2;
       // 
-      // MainForm
+      // MainView
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -64,7 +65,7 @@
       this.Controls.Add(this.txtResult);
       this.Controls.Add(this.btnExec);
       this.Controls.Add(this.txtName);
-      this.Name = "MainForm";
+      this.Name = "MainView";
       this.Text = "MainForm";
       this.ResumeLayout(false);
       this.PerformLayout();

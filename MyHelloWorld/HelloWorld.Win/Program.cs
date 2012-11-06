@@ -7,17 +7,28 @@ namespace HelloWorld.Win
   using System.Threading.Tasks;
   using System.Windows.Forms;
 
+  using Ninject;
+
+  using HelloWorld.Core;
+  using HelloWorld.Core.NinjectModules;
+  using HelloWorld.Win.NinjectModules;
+
   static class Program
   {
-    /// <summary>
-    /// アプリケーションのメイン エントリ ポイントです。
-    /// </summary>
     [STAThread]
     static void Main()
     {
+      SetupKernel();
+
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new MainForm());
+      Application.Run(DIHelper.Kernel.Get<MainView>());
+    }
+
+    static void SetupKernel()
+    {
+      var kernel = new StandardKernel(new HelloWorldCoreModule(), new HelloWorldWinModule());
+      DIHelper.RegistKernel(kernel);
     }
   }
 }

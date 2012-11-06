@@ -9,7 +9,7 @@ namespace HelloWorld.Core.NinjectModules
 
   using Ninject.Modules;
 
-  public class HelloWorldModule : NinjectModule
+  public class HelloWorldCoreModule : NinjectModule
   {
     public override void Load()
     {

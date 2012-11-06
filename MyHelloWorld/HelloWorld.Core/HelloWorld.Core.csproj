@@ -43,7 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HelloWorldMessageManager.cs" />
-    <Compile Include="NinjectModules\HelloWorldModule.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="NinjectModules\HelloWorldCoreModule.cs" />
     <Compile Include="IMessageManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

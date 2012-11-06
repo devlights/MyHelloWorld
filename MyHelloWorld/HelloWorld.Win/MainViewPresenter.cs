@@ -5,22 +5,19 @@ namespace HelloWorld.Win
   using System.Collections.Generic;
   using System.Linq;
 
-  using Ninject;
-
   using HelloWorld.Core;
-  using HelloWorld.Core.NinjectModules;
 
   public class MainViewPresenter
   {
-    IMainView _view;
-    MainViewModel _model;
+    IMainView       _view;
+    MainViewModel   _model;
     IMessageManager _manager;
 
-    public MainViewPresenter(IMainView view)
+    public MainViewPresenter(IMainView view, IMessageManager manager)
     {
-      _view = view;
-      _model = new MainViewModel();
-      _manager = new StandardKernel(new HelloWorldModule()).Get<IMessageManager>();
+      _view    = view;
+      _model   = new MainViewModel();
+      _manager = manager;
     }
 
     public MainViewModel Model
@@ -33,14 +30,14 @@ namespace HelloWorld.Win
 
     public void Setup()
     {
-      _model.Title = "Hello World";
-      _model.Name = string.Empty;
+      _model.Title   = "Hello World";
+      _model.Name    = string.Empty;
       _model.Message = string.Empty;
 
       _view.SetupView(this);
     }
 
-    public void ButtonClicked(object sender, EventArgs e)
+    public void ButtonClicked()
     {
       _model.Message = _manager.GetMessage(_model.Name);
     }

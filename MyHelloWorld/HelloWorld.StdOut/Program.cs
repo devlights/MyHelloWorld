@@ -9,15 +9,28 @@ namespace HelloWorld.StdOut
 
   using HelloWorld.Core;
   using HelloWorld.Core.NinjectModules;
+  using HelloWorld.StdOut.NinjectModules;
   
   class Program
   {
+    [Inject]
+    public IMessageManager Manager { get; set; }
+
     static void Main()
     {
-      var kernel  = new StandardKernel(new HelloWorldModule());
-      var manager = kernel.Get<IMessageManager>();
+      SetupKernel();
+      DIHelper.Kernel.Get<Program>().Execute();
+    }
 
-      Console.WriteLine(manager.GetMessage("devlights"));
+    internal static void SetupKernel()
+    {
+      var kernel = new StandardKernel(new HelloWorldCoreModule(), new HelloWorldStdOutModule());
+      DIHelper.RegistKernel(kernel);
+    }
+
+    public void Execute()
+    {
+      Console.WriteLine(Manager.GetMessage("devlights"));
     }
   }
 }

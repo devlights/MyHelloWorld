@@ -2,6 +2,7 @@
 namespace HelloWorld.Win.Tests
 {
   using System;
+  using HelloWorld.Core;
   using Microsoft.VisualStudio.TestTools.UnitTesting;
 
   class MainViewMock : IMainView
@@ -12,6 +13,14 @@ namespace HelloWorld.Win.Tests
     }
   }
 
+  class MessageManagerMock : IMessageManager
+  {
+    public string GetMessage(string value)
+    {
+      return string.Format("MOCK {0}", value);
+    }
+  }
+
   [TestClass]
   public class MainViewPresenterTest
   {
@@ -19,7 +28,7 @@ namespace HelloWorld.Win.Tests
     public void Test_Setup_Success()
     {
       // Arrange
-      var presenter = new MainViewPresenter(new MainViewMock());
+      var presenter = new MainViewPresenter(new MainViewMock(), new MessageManagerMock());
 
       // Arrange-Assert
       Assert.IsNull(presenter.Model.Title);
@@ -39,7 +48,7 @@ namespace HelloWorld.Win.Tests
     public void Test_Title_AfterSetup()
     {
       // Arrange
-      var presenter = new MainViewPresenter(new MainViewMock());
+      var presenter = new MainViewPresenter(new MainViewMock(), new MessageManagerMock());
 
       // Act
       presenter.Setup();
@@ -52,15 +61,15 @@ namespace HelloWorld.Win.Tests
     public void Test_ButtonClick_Success()
     {
       // Arrange
-      var presenter = new MainViewPresenter(new MainViewMock());
+      var presenter = new MainViewPresenter(new MainViewMock(), new MessageManagerMock());
       
       // Act
       presenter.Setup();
       presenter.Model.Name = "devlights";
-      presenter.ButtonClicked(new object(), EventArgs.Empty);
+      presenter.ButtonClicked();
 
       // Assert
-      Assert.AreEqual<string>("Hello World devlights!", presenter.Model.Message);
+      Assert.AreEqual<string>("MOCK devlights", presenter.Model.Message);
     }
   }
 }

@@ -6,17 +6,22 @@ namespace HelloWorld.Win
   using System.Linq;
   using System.Windows.Forms;
 
-  public partial class MainForm : Form, IMainView
+  using Ninject;
+
+  using HelloWorld.Core;
+
+  public partial class MainView : Form, IMainView
   {
     MainViewPresenter _presenter;
 
-    public MainForm()
+    [Inject]
+    public MainView(IMessageManager manager)
     {
       InitializeComponent();
 
       if (!DesignMode)
       {
-        _presenter = new MainViewPresenter(this);
+        _presenter = new MainViewPresenter(this, manager);
         _presenter.Setup();
       }
     }
@@ -28,8 +33,11 @@ namespace HelloWorld.Win
       DataBindings.Add(new Binding("Text", model, "Title", false));
       txtName.DataBindings.Add(new Binding("Text", model, "Name", false));
       txtResult.DataBindings.Add(new Binding("Text", model, "Message", false));
+    }
 
-      btnExec.Click += presenter.ButtonClicked;
+    private void btnExec_Click(object sender, EventArgs e)
+    {
+      _presenter.ButtonClicked();
     }
   }
 }
