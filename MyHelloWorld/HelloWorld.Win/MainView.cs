@@ -26,9 +26,9 @@ namespace HelloWorld.Win
       }
     }
 
-    public void SetupView(MainViewPresenter presenter)
+    public void SetupView()
     {
-      var model = presenter.Model;
+      var model = _presenter.Model;
 
       DataBindings.Add(new Binding("Text", model, "Title", false));
       txtName.DataBindings.Add(new Binding("Text", model, "Name", false));

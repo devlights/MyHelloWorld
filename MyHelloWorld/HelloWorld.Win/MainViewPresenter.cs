@@ -34,7 +34,7 @@ namespace HelloWorld.Win
       _model.Name    = string.Empty;
       _model.Message = string.Empty;
 
-      _view.SetupView(this);
+      _view.SetupView();
     }
 
     public void ButtonClicked()

@@ -7,7 +7,7 @@ namespace HelloWorld.Win.Tests
 
   class MainViewMock : IMainView
   {
-    public void SetupView(MainViewPresenter presenter)
+    public void SetupView()
     {
       // nop.
     }
