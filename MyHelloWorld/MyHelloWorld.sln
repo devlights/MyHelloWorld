@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{949429D2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Wpf", "HelloWorld.Wpf\HelloWorld.Wpf.csproj", "{EB870CC1-881F-476E-A9F9-6C45F47E7DDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld.Wpf.Tests", "HelloWorld.Wpf.Tests\HelloWorld.Wpf.Tests.csproj", "{D88E3F78-9771-48C9-8312-347B17735FB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EB870CC1-881F-476E-A9F9-6C45F47E7DDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB870CC1-881F-476E-A9F9-6C45F47E7DDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB870CC1-881F-476E-A9F9-6C45F47E7DDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88E3F78-9771-48C9-8312-347B17735FB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88E3F78-9771-48C9-8312-347B17735FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88E3F78-9771-48C9-8312-347B17735FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88E3F78-9771-48C9-8312-347B17735FB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +58,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{088ADAB6-5784-47B2-A1FA-A8166F67C2C5} = {949429D2-DA4B-4599-A8C4-F4D95EC833E5}
 		{501DF56D-3ECD-4D06-9525-D3D163D8E211} = {949429D2-DA4B-4599-A8C4-F4D95EC833E5}
+		{D88E3F78-9771-48C9-8312-347B17735FB1} = {949429D2-DA4B-4599-A8C4-F4D95EC833E5}
 	EndGlobalSection
 EndGlobal
