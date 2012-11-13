@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -51,6 +54,19 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloWorld.Core\HelloWorld.Core.csproj">
+      <Project>{c3be0ce7-6e5d-49a0-97d2-7af061d9d934}</Project>
+      <Name>HelloWorld.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelloWorld.Wpf\HelloWorld.Wpf.csproj">
+      <Project>{eb870cc1-881f-476e-a9f9-6c45f47e7dda}</Project>
+      <Name>HelloWorld.Wpf</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
